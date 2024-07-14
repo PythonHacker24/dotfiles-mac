@@ -34,10 +34,19 @@ alias untar="tar xvf"
 alias la="lsd -la"
 alias browse="ddgr"
 alias imgview="kitten icat"
+alias rzsh="source ~/.zshrc"
+alias kt="kitty +kitten themes --reload-in=all"
+alias thome="cd ~; tmux"
+alias lz="lazygit"
+
 # Commands replacement 
 alias ls="lsd"
 alias cat="bat"
 # Commands replacement ends
+
+fh() {
+  sed '1!G;h;$!d' ~/.zsh_history | awk '!seen[$0]++' | fzf | zsh
+}
 
 # Use lf to switch directories and bind it to ctrl-o
 lfcd () {
@@ -143,3 +152,10 @@ ginit() {       # Takes 1 arguement: remote repository link with .git ending
 
 export VISUAL=nvim
 export EDITOR=nvim
+
+export STM32CubeMX_PATH=/Applications/STMicroelectronics/STM32CubeMX.app/Contents/Resources
+
+export FZF_DEFAULT_OPTS=" \
+--color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
+--color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
+--color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
