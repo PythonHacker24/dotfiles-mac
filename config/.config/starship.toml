@@ -1,0 +1,8 @@
+# # use custom format 
+
+# Move the directory to the second line
+format = '$directory$git_state$git_branch$character'
+
+scan_timeout = 10 
+
+add_newline = false
